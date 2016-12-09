@@ -21,9 +21,7 @@
         <td><%= team.location %></td>
         <td><%= team.coach %></td>
         <td><%= link_to 'Show', team %></td>
-        <% if admin_user? %>
-          <td><%= link_to 'Destroy', team, method: :delete  %></td>
-        <% end %>
+  
       </tr>
     <% end %>
   </tbody>

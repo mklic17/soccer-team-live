@@ -15,7 +15,6 @@ class TeamsController < ApplicationController
 
   # GET /teams/new
   def new
-     Team.create(name: "WebDev", location: "Julian 109", coach: "Khadija", Team_id: 1)
     @team = Team.new
   end
 

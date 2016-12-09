@@ -10,23 +10,27 @@
       </ul>
     </div>
   <% end %>
+<center>
+  <div class="newTeam">
+      <div class="field">
+        <%= f.label :name  %>
+        <%= f.text_field :name %>
+      </div>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
+      <div class="field">
+        <%= f.label :location %>
+        <%= f.text_field :location %>
+      </div>
 
-  <div class="field">
-    <%= f.label :location %>
-    <%= f.text_field :location %>
-  </div>
-
-  <div class="field">
-    <%= f.hidden_field :coach, :value => current_user.name %>
-  </div>
+      <div class="field">
+        <%= f.hidden_field :coach, :value => current_user.name %>
+      </div>
 
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    </div>
+  </center>
+
 <% end %>
