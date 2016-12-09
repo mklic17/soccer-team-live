@@ -1,0 +1,43 @@
+<%= link_to 'Back to All Teams', teams_path %>
+
+
+<p id="notice"><%= notice %></p>
+
+<p>
+
+  <center><h1><%= @team.name %></h1></center>
+</p>
+
+<p>
+  <center>
+    <h3>
+    <strong>Location: </strong><%= @team.location %></h3>
+  </center>
+</p>
+
+<p>
+  <center>
+    <h3><strong>Coach: </strong><%= @team.coach %></h3>
+  </center>
+</p>
+
+<table>
+  <tr>
+    <th>Players</th>
+    <th>Email</th>
+    <th>Position</th>
+    <th>Hometown</th>
+    <th>#</th>
+  </tr>
+
+    <% @team.users.each do |player| %>
+    <tr>
+      <td><%= player.name %></td>
+      <td><%= player.email %></td>
+      <td><%= player.position %></td>
+      <td><%= player.hometown %></td>
+      <td><%= player.number %></td>
+    </tr>
+    <% end %>
+
+</table>

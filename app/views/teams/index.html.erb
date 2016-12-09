@@ -1,0 +1,35 @@
+<h1>Teams</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Coach</th>
+      <% if admin_user? %>
+        <th colspan="2"></th>
+      <% else %>
+        <th colspan="1"></th>
+      <% end %>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @teams.each do |team| %>
+      <tr>
+        <td><%= team.name %></td>
+        <td><%= team.location %></td>
+        <td><%= team.coach %></td>
+        <td><%= link_to 'Show', team %></td>
+        <% if admin_user? %>
+          <td><%= link_to 'Destroy', team, method: :delete  %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Team', new_team_path %>
+<center><p id="notice"><%= notice %></p></center>

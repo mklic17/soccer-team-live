@@ -1,0 +1,37 @@
+<%= form_for(@user) do |f| %>
+  <%= render 'shared/error_messages', object: @user %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name, class: 'form-control'%>
+
+  <%= f.label :email %>
+  <%= f.text_field :email, class: 'form-control'%>
+
+  <%= f.label :password %>
+  <%= f.password_field :password, class: 'form-control'%>
+
+  <%= f.label :password_confirmation, "Confirmation" %>
+  <%= f.password_field :password_confirmation, class: 'form-control'%>
+
+  <%= f.label :position %>
+  <%= f.text_field :position, class: 'form-control'%>
+
+  <%= f.label :hometown %>
+  <%= f.text_field :hometown, class: 'form-control'%>
+
+  <%= f.label :number %>
+  <%= f.text_field :number, class: 'form-control'%>
+
+<center>
+  <%= f.select(:team_id) do %>
+    <% allTeams.each do |team| -%>
+      <%= content_tag(:option, team.name, value: team.id) %>
+    <% end %>
+  <% end %>
+</center>
+
+
+
+  <center><%= f.submit yield(:button_text), class: "btn btn-primary" %></center>
+
+<% end %>
