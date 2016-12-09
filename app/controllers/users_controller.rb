@@ -36,7 +36,7 @@ class UsersController < ApplicationController
 
 
   def new
-    u = User.create(name: "admin", email: "admin@admin.com", password: "administrator", password_confirmation: "administrator", admin: true, admin: true, position: "admin", hometown: "adminr", number: 0, team_id: 3)
+
     @user = User.new()
   end
 
